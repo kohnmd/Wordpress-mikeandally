@@ -1,0 +1,16 @@
+ @font-face {
+	font-family: 'PupcatRg-Regular';
+	src: url('pupcat_webfont.eot');
+	src: url('pupcat_webfont.eot?#iefix') format('embedded-opentype'),
+         url('pupcat_webfont.woff') format('woff'),url('pupcat_webfont.ttf') format('truetype'),url('pupcat_webfont.svg#PupcatRg-Regular') format('svg');}
+ 
+ @font-face {
+    font-family: 'SFCartoonistHandRegular';
+    src: url('SF_Cartoonist_Hand-webfont.eot');
+    src: url('SF_Cartoonist_Hand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('SF_Cartoonist_Hand-webfont.woff') format('woff'),
+         url('SF_Cartoonist_Hand-webfont.ttf') format('truetype'),
+         url('SF_Cartoonist_Hand-webfont.svg#SFCartoonistHandRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
