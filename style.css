@@ -14,6 +14,7 @@ Tags:
 	light grey		DDDDDD (e.g. lines & borders)
 	dark grey		535353 (e.g. text)
 	skyblue			6699CC (e.g. links)
+	dark blue		1046A9 (e.g. background)
 	
 	
 */
@@ -68,8 +69,7 @@ body {
 	min-width: 980px;
 	font: 75%/1.2em "Trebuchet MS", Verdana, sans-serif;
 	color: #535353;
-	text-shadow: 1px 1px 0px #FFF;
-	background: #1046a9 url('images/bg_polkadots.png') repeat center top;
+	background: #1046A9 url('images/bg_polkadots.png') repeat center top;
 											/*background: pink;*/
 }
 
@@ -109,8 +109,18 @@ strong {font-weight: bold; }
 em {font-style: italic; }
 del {text-decoration: line-through; }
 u {text-decoration: underline; }
-blockquote {margin: 0 30px 30px 0; padding: 0 0 0 30px;  background: url('images/bg_blockquote.png') no-repeat left top; color: #737373;  }
-
+blockquote {
+	margin: 0 30px 30px 0;
+	padding: 10px 10px 10px 40px; 
+	color: #737373;
+	background: url('images/bg_blockquote.png') no-repeat 10px 10px;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	border: 1px dashed #DDD;
+}
 
 p.aligncenter {
 	text-align: center;
@@ -281,7 +291,6 @@ MAIN
 .post {
 	width: 620px;
 	margin: 0 auto;
-	overflow: hidden;
 															/* background: red; */
 }
 
@@ -490,7 +499,7 @@ FORM
 }
 
 .required {
-	color: #FDBC06;
+	color: #FF0000;
 	font-weight: bold;
 }
 
@@ -548,107 +557,51 @@ FORM
 
 
 /**************************
-PAGE SPECIFIC
+CONTACT FORM
 ***************************/
 
-.page-wrap {
-	width: 940px;
-	margin: 0 auto;
-	padding: 20px 0;
-	overflow: hidden;
+
+
+.contact-form input,
+.contact-form input:focus {
+	color: #535353;
+	font: 1em/1em "Trebuchet MS", Verdana, sans-serif;
+	padding: 3px 3px 3px 6px;
+
+	outline: none;
+	border: 1px solid #AAA;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	-webkit-box-shadow: 0 0 6px #CCC;
+	-moz-box-shadow: 0 0 6px #CCC;
+	box-shadow: 0 0 6px #CCC;
 }
 
-.page-wrap h2 {
-	padding: 0 20px 20px;
-	text-align: center;
+.contact-form input[type="submit"] {
+	padding: 5px;
 }
 
-.halvesies-left {
-	width: 420px;
-	float: left;
-	margin-right: 40px;
-	padding-left: 30px;
+.contact-form.wedding-buzz textarea,
+.contact-form.wedding-buzz textarea:focus {
+	width: 538px;
+	height: 80px;
+	margin: 0 30px 0 0;
+	padding: 10px 10px 10px 40px; 
+	font: 1em/1em "Trebuchet MS", Verdana, sans-serif;
+	color: #737373;
+	outline: none;
+	background: transparent url('images/bg_blockquote.png') no-repeat 10px 10px;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	border: 1px dashed #DDD;
 }
 
-.halvesies-right {
-	width: 450px;
-	float: left;
-}
-
-#smart-archives-block {
-	list-style-type: none;
-	text-align: center;
-}
-
-#smart-archives-block span,
-#smart-archives-block a {
-	margin-left: 5px;
-}
-
-#smart-archives-block .empty-month {
-	color: #AAA;
-}
-
-#smart-archives-list {
-	width: 640px;
-	float: left;
-	padding: 20px 20px 0 0;
-	overflow: hidden;
-}
-
-#smart-archives-list h2 {
-	width: 170px;
-	padding: 5px 10px 0 0;
-	float: left;
-	font-size: 1.5em;
-	text-align: center;
-	border-top: 1px solid #DDD;
-}
-
-#smart-archives-list ul {
-	list-style-type: none;
-	width: 420px;
-	float: left;
-	margin: 0;
-	padding: 5px 0 2em 2em;
-	border-top: 1px solid #DDD;
-}
-
-#smart-archives-list ul li {
-    overflow: hidden;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #E9E9E9;
-}
-
-#smart-archives-list .archive-date {
-    width: 110px;
-    text-align: center;
-    display: block;
-    float: left;
-}
-
-#smart-archives-list .archive-link {
-    width: 300px;
-	/* margin-left: 10px; */
-	display: block;
-	float: right;
-}
-
-.tags-archive {
-	width: 279px;
-	float: left;
-	padding-top: 20px;
-}
-
-.tags-archive h3 {
-	/* font-size: 1.5em; */
-}
-
-.tags-archive ul {
-	margin-left: 1em;
-	list-style-type: none;
-}
 
 /**************************
 PAGINATION
@@ -759,237 +712,6 @@ PAGINATION
 	-webkit-box-shadow: 0 0 3px #AA;
 	-moz-box-shadow: 0 0 3px #AAA;
 	box-shadow: 0 0 3px #AAA;
-}
-
-/**************************
-CONTACT FORMS
-***************************/
-
-.wpcf7 {
-	width: 450px;
-	overflow: show;
-}
-
-.wpcf7 .wpcf7-left {
-	float: left;
-	width: 210px;
-	margin: 0 0 20px 0;
-}
-
-.wpcf7 .wpcf7-right {
-	float: left;
-	width: 210px;
-	margin: 0 0 20px 20px;
-	clear: right;
-}
-
-.wpcf7 .wpcf7-full,
-.wpcf7 .wpcf7-submit-wrap {
-	width: 440px;
-	margin: 0 0 20px 0;
-	float: left;
-}
-
-.wpcf7 .wpcf7-submit-wrap {
-	margin: 0;
-}
-
-.wpcf7 input.wpcf7-text {
-	width: 200px;
-	padding: 4px;
-	margin-top: 10px;
-	border: 1px solid #DDDDDD;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.wpcf7 input.small {
-	width: 40px;
-}
-
-
-.wpcf7 textarea {
-	width: 430px;
-	height: 187px;
-	padding: 4px;
-	margin-top: 10px;
-	border: 1px solid #DDDDDD;
-	font: 1em 'Century Gothic',Helvetica, Arial, sans-serif;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.wpcf7 input.wpcf7-text:focus,
-.wpcf7 textarea:focus {
-	border: 1px solid #E262A3;
-	outline: none;
-}
-
-.wpcf7 input.wpcf7-submit {
-	width: 70px;
-	padding: 4px;
-	font-family: 'Century Gothic',Helvetica, Arial, sans-serif;
-	font-size: 1.2em;
-	background: #E262A3;
-	border: 0;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	
-	-webkit-box-shadow: 0 0 5px #999;
-	-moz-box-shadow: 0 0 5px #999;
-	box-shadow: 0 0 5px #999;
-}
-
-.wpcf7 input.wpcf7-submit:hover {
-	background: #000000;
-	color: #FFFFFF;
-	cursor: pointer;
-}
-
-.wpcf7 .wpcf7-submit-wrap p {
-	float: right;
-	text-align: right;
-	margin: 0;
-}
-
-.wpcf7 .wpcf7-full table {
-	width: 440px;
-}
-
-/**************************
-CONTACT ERRORS
-***************************/
-
-.wpcf7-left .wpcf7-not-valid-tip,
-.wpcf7-right .wpcf7-not-valid-tip {
-	left: 0 !important;
-	top: -5px !important;
-	width: 200px;
-	padding: 4px;
-	border: 0 !important;
-	background: transparent !important;
-	color: #FF0000;
-	
-	/* -webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px; */
-}
-
-.wpcf7-full .wpcf7-not-valid-tip {
-	left: 0 !important;
-	top: -180px !important;
-	width: 430px;
-	height: 187px;
-	padding: 4px;
-	border: 0 !important;
-	background: transparent !important;
-	color: #FF0000;
-	
-	/* -webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px; */
-}
-
-.wpcf7-full table .wpcf7-not-valid-tip {
-	left: 0 !important;
-	top: -5px !important;
-	width: 200px;
-	height: 17px;
-	padding: 4px;
-	border: 0 !important;
-	background: transparent !important;
-	color: #FF0000;
-	
-	/* -webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px; */
-}
-
-.wpcf7-response-output {
-	float: left;
-	color: #FF0000;
-	padding: 0 !important;
-	border: 0 !important;
-}
-
-.wpcf7-mail-sent-ok {
-	color: #E262A3 !important;
-}
-
-
-/**************************
-SIDEBAR
-***************************/
-
-#sidebar {
-	width: 280px;
-	float: right;
-	padding: 10px;
-	margin-bottom: 20px;
-	background: url('images/black_50.png') repeat;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-#sidebar h3 {
-	padding: 0 10px;
-	font-size: 1.6em;
-}
-
-.widget {
-	margin-bottom: 20px;
-}
-
-.widget:last-child {
-	margin: 0;
-}
-
-.widget ul,
-.widget .textwidget {
-	padding: 10px;
-	margin: 0;
-	background: url('images/black_50.png') repeat;
-
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-.widget ul li {
-	margin-bottom: 4px;
-	padding-bottom: 4px;
-	border-bottom: 1px dotted #333;
-}
-
-.widget ul li:last-child {
-	margin: 0;
-	padding-bottom: 0;
-	border: 0;
-}
-
-#sidebar p {
-	margin-bottom: 12px;
-}
-
-#sidebar p:last-child {
-	margin: 0;
-}
-
-#sidebar .aktt_tweets  ul {
-	list-style-type: none;
-	margin: 0;
-}
-
-#sidebar .aktt_tweets  ul li {
-	margin-bottom: 12px;
 }
 
 
