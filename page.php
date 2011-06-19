@@ -22,7 +22,7 @@
 			
 			
 			<?php
-			$args = array('child_of' => $post->ID, 'sort_columns' => 'menu_order');
+			$args = array('child_of' => $post->ID, 'sort_columns' => 'menu_order', 'sort_order' => 'desc');
 			$counter = 0;
 			$wrap = true;
 			

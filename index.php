@@ -6,7 +6,7 @@
 			<?php
 			$home_page_id = 496; // [CHANGEME] based on what the parent page id is for the pages you want displayed on the homepage
 			
-			$args = array('child_of' => $home_page_id, 'sort_columns' => 'menu_order');
+			$args = array('child_of' => $home_page_id, 'sort_columns' => 'menu_order', 'sort_order' => 'desc');
 			$counter = 0;
 			$wrap = true;
 			
