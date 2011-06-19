@@ -3,41 +3,35 @@
 	<div id="main">
 		<div id="content">
 			
-			<div class="post-wrap">
-				<div class="post left">
-					<?php
-						$args = array( 'page_id'=>498);
-						$home_left_query = new WP_Query( $args );
-						if($home_left_query->have_posts()) while($home_left_query->have_posts()) : $home_left_query->the_post();
-							echo '<h1 class="title">' . get_the_title() . '</h1>';
-							the_content();
-							
-							
-						endwhile;
-					?>
-				</div><!-- .half-left -->
+			<?php
+			$home_page_id = 496; // [CHANGEME] based on what the parent page id is for the pages you want displayed on the homepage
+			
+			$args = array('child_of' => $home_page_id, 'sort_columns' => 'menu_order');
+			$counter = 0;
+			$wrap = true;
+			
+			foreach(get_pages($args) as $page) { ?>
+				<?php
+				if((++$counter % 2) == 0) {
+					$wrap = false;
+				} else {
+					$wrap = true;
+				}
 				
-				<div class="post right">
-					<?php
-						$args = array( 'page_id'=>520);
-						$home_left_query = new WP_Query( $args );
-						if($home_left_query->have_posts()) while($home_left_query->have_posts()) : $home_left_query->the_post();
-							echo '<h1 class="title">' . get_the_title() . '</h1>';
-							the_content();
-							
-							
-						endwhile;
-					?>
-				</div><!-- .half-right -->
-			</div><!-- .post -->
-			
-			
-			<?php /* <div class="content-block">
-				<h2>On May 18, 2012 we'll look like this:</h2>
-			</div>
-			<div id="main-image">
-				<img src="<?php bloginfo('template_url'); ?>/images/wedding-photo.jpg" height="371" width="938" />
-			</div> */ ?>
+				if($wrap) echo '<div class="post-wrap">'; 
+				?>
+				
+					<div class="post <?php echo $wrap ? 'left' : 'right'; ?>">
+					
+						<h1 class="title"><?php	echo $page->post_title; ?></h1>
+						<?php echo $page->post_content; ?>
+					
+					</div><!-- .post -->
+				
+				<?php if(!$wrap) echo '</div><!-- .post-wrap --->'; ?>
+			<?php
+			} // endforeach
+			?>
 		
 		</div><!-- #content -->
 	</div><!-- #main-->	

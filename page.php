@@ -22,31 +22,31 @@
 			
 			
 			<?php
-			$children = get_pages('child_of='.$post->ID.'&parent='.$post->ID);
+			$args = array('child_of' => $post->ID, 'sort_columns' => 'menu_order');
+			$counter = 0;
+			$wrap = true;
 			
-			if(count($children)) {
-				$i = 0;
-			
-				foreach($children as $child) {
-					if(++$i % 2 == 0) {
-						echo '<div class="post right">';
-					} else {
-						echo '<div class="post-wrap">';
-						echo '<div class="post left">';
-					} ?>
+			foreach(get_pages($args) as $page) { ?>
+			<?php
+				if((++$counter % 2) == 0) {
+					$wrap = false;
+				} else {
+					$wrap = true;
+				}
+				
+				if($wrap) echo '<div class="post-wrap">'; 
+				?>
+				
+					<div class="post <?php echo $wrap ? 'left' : 'right'; ?>">
 					
-						<h1 class="title"><?php echo $child->post_title ?></h1>
-						<?php echo $child->post_content; ?>
+						<h1 class="title"><?php	echo $page->post_title; ?></h1>
+						<?php echo $page->post_content; ?>
 					
-					
-					<?php if($i % 2 == 0) {
-						echo '</div><!-- .post.right -->';
-						echo '</div><!-- .post-wrap -->';
-					} else {
-						echo '</div><!-- .post.left -->';
-					}
-				} // endforeach
-			} // endif
+					</div><!-- .post -->
+				
+				<?php if(!$wrap) echo '</div><!-- .post-wrap --->'; ?>
+			<?php
+			} // endforeach
 			?>
 		
 		</div>
