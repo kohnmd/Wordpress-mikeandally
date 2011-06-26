@@ -297,7 +297,7 @@ MAIN
 .post.left {
 	width: 460px;
 	float: left;
-	padding: 0 20px 0 0;
+	padding: 1px 20px 0 0;
 	margin: 0;
 }
 
@@ -360,13 +360,7 @@ MAIN
 	text-align: left;
 	overflow: hidden;
 	margin: 10px 0 0 0;
-	padding: 5px 10px 0 10px;
-	background: url('images/black_50.png') repeat;
 	line-height: 15px;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
 }
 
 .metadata ul {
@@ -381,7 +375,7 @@ MAIN
 	margin: 0 10px 0 0;
 	float: left;
 	line-height: 15px;
-	border-right: 1px solid #EEE;
+	border-right: 1px solid #DDD;
 	background: none;
 }
 
@@ -400,18 +394,13 @@ MAIN
 COMMENTS
 ***************************/
 
-
-h3#comments-title {
-	margin: 0;
-	color: #FDBC06;
+.comment-wrap {
+	padding-top: 20px;
+	border-top: 1px dashed #DDD;
 }
 
-/*****************
-COMMENTS
-*****************/
-
-#comments {
-	width: 640px;
+.comment-wrap h3 {
+	display: block;
 }
 
 ol.commentlist {
@@ -421,7 +410,7 @@ ol.commentlist {
 
 li.comment {
 	overflow: hidden;
-	padding: 0 0 0 0px;
+	padding: 0;
 	margin: 0 0 0 0px;
 	background: none;
 }
@@ -429,15 +418,11 @@ li.comment {
 .single-comment {
 	padding: 10px;
 	margin: 0 0 20px 0;
-	background: url('images/black_50.png') repeat;
+	border: 1px solid #DDD;
 	
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-}
-
-.comment-content {
-	padding: 0 10px;
 }
 
 cite.fn {
@@ -469,17 +454,7 @@ FORM
 *****************/
 
 #respond {
-	padding: 10px;
-	margin: 0 0 20px 0;
-	background: url('images/black_50.png') repeat;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-#respond h3#reply-title {
-	margin-left: 6px;
+	padding: 0 0 0 5px;
 }
 
 #respond h3#reply-title  small {
@@ -487,15 +462,12 @@ FORM
 	margin-bottom: 10px;
 }
 
-#respond p {
+#respond p,
+#respond div.row {
 	margin-bottom: .8em;
 }
 
-#respond label {
-	display: block;
-	float: left;
-	clear: both;
-	margin-left: 6px;
+label {
 }
 
 .required {
@@ -503,70 +475,12 @@ FORM
 	font-weight: bold;
 }
 
-#respond input[type="text"] {
-	width: 275px;
-	height: 25px;
-	padding: 3px 3px 3px 6px;
-	color: #FFF;
-	border: 1px solid #222;
-	background: url('images/black_80.png') repeat;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-#respond textarea {
-	font: 1em "Trebuchet MS", Verdana, sans-serif;
-	color: #FFF;
-	width: 450px;
-	padding: 5px;
-	border: 1px solid #222;
-	background: url('images/black_80.png') repeat;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-#respond input:focus,
-#respond textarea:focus {
-	-webkit-box-shadow: 0 0 5px #333;
-	-moz-box-shadow: 0 0 5px #333;
-	box-shadow: 0 0 5px #333;
-}
-
-#respond  input#submit {
-	font: 1em "Trebuchet MS", Verdana, sans-serif;
-	color: #FFF;
-	padding: 5px 30px;
-	border: 1px solid #222;
-	background: url('images/black_80.png') repeat;
-	cursor: pointer;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-#respond input#submit:hover {
-	-webkit-box-shadow: 0 0 5px #333;
-	-moz-box-shadow: 0 0 5px #333;
-	box-shadow: 0 0 5px #333;
-}
-
-
-/**************************
-CONTACT FORM
-***************************/
-
-
-
-.contact-form input,
-.contact-form input:focus {
+input,
+input:focus {
 	color: #535353;
 	font: 1em/1em "Trebuchet MS", Verdana, sans-serif;
 	padding: 3px 3px 3px 6px;
+	background: #FFF;
 
 	outline: none;
 	border: 1px solid #AAA;
@@ -580,9 +494,33 @@ CONTACT FORM
 	box-shadow: 0 0 6px #CCC;
 }
 
-.contact-form input[type="submit"] {
+#respond textarea {
+	color: #535353;
+	font: 1em/1em "Trebuchet MS", Verdana, sans-serif;
+	width: 443px;
 	padding: 5px;
+	background: #FFF;
+
+	outline: none;
+	border: 1px solid #AAA;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	-webkit-box-shadow: 0 0 6px #CCC;
+	-moz-box-shadow: 0 0 6px #CCC;
+	box-shadow: 0 0 6px #CCC;
 }
+
+input[type="submit"] {
+	padding: 5px;
+	cursor: pointer;
+}
+
+/**************************
+CONTACT FORM
+***************************/
 
 .contact-form.wedding-buzz textarea,
 .contact-form.wedding-buzz textarea:focus {

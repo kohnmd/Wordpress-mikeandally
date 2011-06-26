@@ -48,7 +48,11 @@
 			<?php
 			} // endforeach
 			?>
-		
+			
+			
+			
+			<?php comments_template(); ?>
+			
 		</div>
 		<!-- END #content -->
 		

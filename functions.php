@@ -234,20 +234,15 @@ function sebnitu_comment_form($form_options) {
 	// Fields Array
 	$fields = array(
 
-		'author' =>	'<p class="comment-form-author">' .
+		'author' =>	'<div class="comment-form-author row">' .
 					'<label for="author">' . __( 'Name' ) . ' <span class="required">*</span></label><br />' .
 					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
-					'</p>',
+					'</div>',
 
-		'email' =>	'<p class="comment-form-email">' .
+		'email' =>	'<div class="comment-form-email row">' .
 					'<label for="email">' . __( 'Email' ) . ' <span class="required">*</span></label><br />' .
 					'<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' .
-					'</p>',
-
-		'url' =>	'<p class="comment-form-url">' .
-					'<label for="url">' . __( 'Website' ) . '</label><br />' .
-					'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />' .
-					'</p>'
+					'</div>'
 	);
 
 	// Form Options Array
@@ -257,10 +252,10 @@ function sebnitu_comment_form($form_options) {
 
 		// Template Options
 		'comment_field' =>
-					'<p class="comment-form-comment">' .
+					'<div class="comment-form-comment row">' .
 					'<label for="comment">' . _x( 'Comment', 'noun' ) . ' <span class="required">*</span></label><br />' .
 					'<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>' .
-					'</p>',
+					'</div>',
 
 		'must_log_in' =>
 					'<p class="must-log-in">' .
