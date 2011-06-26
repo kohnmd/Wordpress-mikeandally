@@ -1,3 +1,4 @@
+<?php if ( comments_open() ) : ?>
 	<div class="post-wrap comment-wrap">
 		<div class="post left">
 			<?php comment_form(); ?>
@@ -35,22 +36,10 @@
 					<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
 				</div><!-- .navigation -->
 	<?php endif; // check for comment navigation ?>
-
-				<?php else : // or, if we don't have comments:
-
-					/* If there are no comments and comments are closed,
-					 * let's leave a little note, shall we?
-					 */
-					if ( ! comments_open() ) :
-				?>
-						<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyten' ); ?></p>
 				
-					<?php
-					endif; // end ! comments_open()
-		
-				endif; // end have_comments()
-				?>
+				<?php endif; // end have_comments() ?>
 			</div> <!-- #comments -->
 		</div><!-- .post.right -->
 	
 	</div><!-- .post-wrap -->
+<?php endif; // end comments_open () ?>
